@@ -1,0 +1,457 @@
+{
+  "translations": {
+    "nextKeyHint": "Use {{finger}} of {{hand}}",
+    "hands": {
+      "right": {
+        "label": "Right Hand"
+      },
+      "left": {
+        "label": "Left Hand"
+      }
+    },
+    "fingers": {
+      "f-1": {
+        "label": "Thumb"
+      },
+      "f-2": {
+        "label": "Index Finger"
+      },
+      "f-3": {
+        "label": "Middle Finger"
+      },
+      "f-4": {
+        "label": "Ring Finger"
+      },
+      "f-5": {
+        "label": "Pinky Finger"
+      }
+    },
+    "buttons": {
+      "b-1-1": {
+        "label": "esc",
+        "lower": "esc",
+        "upper": "esc"
+      },
+      "b-1-10": {
+        "label": "F9",
+        "lower": "F9",
+        "upper": "F9"
+      },
+      "b-1-11": {
+        "label": "F10",
+        "lower": "F10",
+        "upper": "F10"
+      },
+      "b-1-12": {
+        "label": "F11",
+        "lower": "F11",
+        "upper": "F11"
+      },
+      "b-1-13": {
+        "label": "F12",
+        "lower": "F12",
+        "upper": "F12"
+      },
+      "b-1-2": {
+        "label": "F1",
+        "lower": "F1",
+        "upper": "F1"
+      },
+      "b-1-3": {
+        "label": "F2",
+        "lower": "F2",
+        "upper": "F2"
+      },
+      "b-1-4": {
+        "label": "F3",
+        "lower": "F3",
+        "upper": "F3"
+      },
+      "b-1-5": {
+        "label": "F4",
+        "lower": "F4",
+        "upper": "F4"
+      },
+      "b-1-6": {
+        "label": "F5",
+        "lower": "F5",
+        "upper": "F5"
+      },
+      "b-1-7": {
+        "label": "F6",
+        "lower": "F6",
+        "upper": "F6"
+      },
+      "b-1-8": {
+        "label": "F7",
+        "lower": "F7",
+        "upper": "F7"
+      },
+      "b-1-9": {
+        "label": "F8",
+        "lower": "F8",
+        "upper": "F8"
+      },
+      "b-2-1": {
+        "label": "~",
+        "lower": "~",
+        "upper": "~"
+      },
+      "b-2-10": {
+        "label": "9",
+        "lower": "9",
+        "upper": "9"
+      },
+      "b-2-11": {
+        "label": "0",
+        "lower": "0",
+        "upper": "0"
+      },
+      "b-2-12": {
+        "label": "-",
+        "lower": "-",
+        "upper": "-"
+      },
+      "b-2-13": {
+        "label": "+",
+        "lower": "+",
+        "upper": "  "
+      },
+      "b-2-14": {
+        "label": "backspace",
+        "lower": "backspace",
+        "upper": "  "
+      },
+      "b-2-2": {
+        "label": "1",
+        "lower": "1",
+        "upper": "  "
+      },
+      "b-2-3": {
+        "label": "2",
+        "lower": "2",
+        "upper": "  "
+      },
+      "b-2-4": {
+        "label": "3",
+        "lower": "3",
+        "upper": "  "
+      },
+      "b-2-5": {
+        "label": "4",
+        "lower": "4",
+        "upper": "  "
+      },
+      "b-2-6": {
+        "label": "5",
+        "lower": "5",
+        "upper": "5"
+      },
+      "b-2-7": {
+        "label": "6",
+        "lower": "6",
+        "upper": "  "
+      },
+      "b-2-8": {
+        "label": "7",
+        "lower": "7",
+        "upper": "7"
+      },
+      "b-2-9": {
+        "label": "8",
+        "lower": "8",
+        "upper": "  "
+      },
+      "b-3-1": {
+        "label": "Tab",
+        "lower": "Tab",
+        "upper": "Tab"
+      },
+      "b-3-10": {
+        "label": "O",
+        "lower": "o",
+        "upper": "O"
+      },
+      "b-3-11": {
+        "label": "P",
+        "lower": "p",
+        "upper": "P"
+      },
+      "b-3-12": {
+        "label": "[",
+        "lower": "[",
+        "upper": "["
+      },
+      "b-3-13": {
+        "label": "]",
+        "lower": "]",
+        "upper": "]"
+      },
+      "b-3-14": {
+        "label": "Enter",
+        "lower": "\r",
+        "upper": "\r"
+      },
+      "b-3-15": {
+        "label": "7",
+        "lower": "7",
+        "upper": "7"
+      },
+      "b-3-16": {
+        "label": "8",
+        "lower": "8",
+        "upper": "8"
+      },
+      "b-3-17": {
+        "label": "9",
+        "lower": "9",
+        "upper": "9"
+      },
+      "b-3-2": {
+        "label": "Q",
+        "lower": "q",
+        "upper": "Q"
+      },
+      "b-3-3": {
+        "label": "W",
+        "lower": "w",
+        "upper": "W"
+      },
+      "b-3-4": {
+        "label": "E",
+        "lower": "e",
+        "upper": "E"
+      },
+      "b-3-5": {
+        "label": "R",
+        "lower": "r",
+        "upper": "R"
+      },
+      "b-3-6": {
+        "label": "T",
+        "lower": "t",
+        "upper": "T"
+      },
+      "b-3-7": {
+        "label": "Y",
+        "lower": "y",
+        "upper": "Y"
+      },
+      "b-3-8": {
+        "label": "U",
+        "lower": "u",
+        "upper": "U"
+      },
+      "b-3-9": {
+        "label": "I",
+        "lower": "i",
+        "upper": "I"
+      },
+      "b-4-1": {
+        "label": "Caps Lock",
+        "lower": "Caps Lock",
+        "upper": "Caps Lock"
+      },
+      "b-4-10": {
+        "label": "L",
+        "lower": "l",
+        "upper": "L"
+      },
+      "b-4-11": {
+        "label": ";",
+        "lower": ";",
+        "upper": ";"
+      },
+      "b-4-12": {
+        "label": "'",
+        "lower": "'",
+        "upper": "'"
+      },
+      "b-4-13": {
+        "label": "\\",
+        "lower": "\\",
+        "upper": "\\"
+      },
+      "b-4-14": {
+        "label": "4",
+        "lower": "4",
+        "upper": "4"
+      },
+      "b-4-15": {
+        "label": "5",
+        "lower": "5",
+        "upper": "5"
+      },
+      "b-4-16": {
+        "label": "6",
+        "lower": "6",
+        "upper": "6"
+      },
+      "b-4-2": {
+        "label": "A",
+        "lower": "a",
+        "upper": "A"
+      },
+      "b-4-3": {
+        "label": "S",
+        "lower": "s",
+        "upper": "S"
+      },
+      "b-4-4": {
+        "label": "D",
+        "lower": "d",
+        "upper": "D"
+      },
+      "b-4-5": {
+        "label": "F",
+        "lower": "f",
+        "upper": "F"
+      },
+      "b-4-6": {
+        "label": "G",
+        "lower": "g",
+        "upper": "G"
+      },
+      "b-4-7": {
+        "label": "H",
+        "lower": "h",
+        "upper": "H"
+      },
+      "b-4-8": {
+        "label": "J",
+        "lower": "j",
+        "upper": "J"
+      },
+      "b-4-9": {
+        "label": "K",
+        "lower": "k",
+        "upper": "K"
+      },
+      "b-5-1": {
+        "label": "Shift",
+        "lower": "shift",
+        "upper": "shift"
+      },
+      "b-5-10": {
+        "label": ".",
+        "lower": ".",
+        "upper": "."
+      },
+      "b-5-11": {
+        "label": "/",
+        "lower": "/",
+        "upper": "/"
+      },
+      "b-5-12": {
+        "label": "Shift",
+        "lower": "shift",
+        "upper": "shift"
+      },
+      "b-5-13": {
+        "label": "1",
+        "lower": "1",
+        "upper": "1"
+      },
+      "b-5-14": {
+        "label": "2",
+        "lower": "2",
+        "upper": "2"
+      },
+      "b-5-15": {
+        "label": "3",
+        "lower": "3",
+        "upper": "3"
+      },
+      "b-5-2": {
+        "label": "Z",
+        "lower": "z",
+        "upper": "Z"
+      },
+      "b-5-3": {
+        "label": "X",
+        "lower": "x",
+        "upper": "X"
+      },
+      "b-5-4": {
+        "label": "C",
+        "lower": "c",
+        "upper": "C"
+      },
+      "b-5-5": {
+        "label": "V",
+        "lower": "v",
+        "upper": "V"
+      },
+      "b-5-6": {
+        "label": "B",
+        "lower": "b",
+        "upper": "B"
+      },
+      "b-5-7": {
+        "label": "N",
+        "lower": "n",
+        "upper": "N"
+      },
+      "b-5-8": {
+        "label": "M",
+        "lower": "m",
+        "upper": "M"
+      },
+      "b-5-9": {
+        "label": ",",
+        "lower": ",",
+        "upper": ","
+      },
+      "b-6-1": {
+        "label": "Ctrl",
+        "lower": "Ctrl",
+        "upper": "Ctrl"
+      },
+      "b-6-10": {
+        "label": ".",
+        "lower": ".",
+        "upper": "."
+      },
+      "b-6-2": {
+        "label": "  ",
+        "lower": "  ",
+        "upper": "  "
+      },
+      "b-6-3": {
+        "label": "Alt",
+        "lower": "Alt",
+        "upper": "Alt"
+      },
+      "b-6-4": {
+        "label": "Space",
+        "lower": " ",
+        "upper": "  "
+      },
+      "b-6-5": {
+        "label": "Alt Gr",
+        "lower": "Alt Gr",
+        "upper": "Alt Gr"
+      },
+      "b-6-6": {
+        "label": "  ",
+        "lower": "  ",
+        "upper": "  "
+      },
+      "b-6-7": {
+        "label": "  ",
+        "lower": "  ",
+        "upper": "  "
+      },
+      "b-6-8": {
+        "label": "Ctrl",
+        "lower": "Ctrl",
+        "upper": "Ctrl"
+      },
+      "b-6-9": {
+        "label": "0",
+        "lower": "0",
+        "upper": "0"
+      }
+    }
+  }
+}
