@@ -1,24 +1,34 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useGetExercices } from "../../../hooks";
 import { useParams } from "react-router-dom";
 import Exercice from "./Exercice";
-
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion";
-const Container = ({ lastUpdate, setLastUpdate }) => {
+
+import Loading from "../../common/Loading";
+import ErrorAlert from "../../common/ErrorAlert";
+
+const R = require("ramda");
+const Container = ({ lastUpdate, setLastUpdate, handleClose, show }) => {
+  const { t } = useTranslation();
   const { lessonId } = useParams();
   const exercicesFilters = `?lesson=${lessonId}`;
   const { data, loading, error } = useGetExercices(
     exercicesFilters,
     lastUpdate
   );
-  const loadingMarkup = <h5>Loading ...</h5>;
-  const errorMarkup = <h5>Error ...</h5>;
+  if (!show) return <></>;
 
-  if (error) return errorMarkup;
-  if (loading) return loadingMarkup;
-  if (data) {
-    if (data.length < 1) return null;
-    return (
+  let markup = null;
+
+  if (loading) {
+    markup = <Loading />;
+  } else if (error) {
+    markup = <ErrorAlert />;
+  } else if (data && data.length) {
+    markup = (
       <Accordion defaultActiveKey="0">
         {data.map((exercice, index) => (
           <Accordion.Item eventKey={index} key={exercice.id}>
@@ -30,7 +40,21 @@ const Container = ({ lastUpdate, setLastUpdate }) => {
         ))}
       </Accordion>
     );
-  } else return loadingMarkup;
+  }
+
+  return (
+    <Modal show={show && Boolean(R.prop("length", data))} onHide={handleClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>History</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{markup}</Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          {t("ok")}
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
 };
 
 export default Container;

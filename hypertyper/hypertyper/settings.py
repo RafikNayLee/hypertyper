@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'frontend',
     'stats',
     'knox',
+    'landingpage'
 ]
 
 REST_FRAMEWORK = {

@@ -13,15 +13,20 @@ const Key = ({
   width,
   height,
   highlight,
+  fade,
   hand,
   finger,
 }) => {
   return (
-    <g id={id}>
+    <g
+      id={id}
+      className={clsx("buttonKey", {
+        fadeKey: fade,
+      })}
+    >
       <rect
         className={clsx(getKeyClassName({ hand, finger }), {
-          highlight: highlight,
-          shadow: true,
+          highlight: false,
         })}
         width={width}
         height={height}
@@ -35,7 +40,7 @@ const Key = ({
         y={y}
         width={width}
         height={height}
-        transform="translate(10 20)"
+        transform="translate(15, 30)"
       >
         {text}
       </text>

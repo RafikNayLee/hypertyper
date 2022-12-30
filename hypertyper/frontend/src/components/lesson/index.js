@@ -2,7 +2,7 @@ import LessonBoard from "./LessonBoard";
 import LessonTextField from "./LessonTextField";
 import LessonWord from "./LessonWord";
 import LessonHistory from "./LessonHistory";
-import LessonExerciceResultModel from "./LessonExerciceResultModel";
+import LessonExerciceResultModal from "./LessonExerciceResultModal";
 import Hints from "./Hints";
 
 export {
@@ -10,6 +10,6 @@ export {
   LessonTextField,
   LessonWord,
   LessonHistory,
-  LessonExerciceResultModel,
+  LessonExerciceResultModal,
   Hints,
 };

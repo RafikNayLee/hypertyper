@@ -3,8 +3,7 @@ import React from "react";
 const Style = () => {
   return (
     <style>
-      .gray{"{fill:lightgray;}"}
-      .highlight{"{fill:green;}"}
+      .gray{"{fill:darkgray;}"}
       .r-f-1{"{fill:#C2E812;}"}
       .r-f-2{"{fill:#91F5AD;}"}
       .r-f-3{"{fill:#8B9EB7;}"}
@@ -15,13 +14,12 @@ const Style = () => {
       .l-f-3{"{fill:#FFBC42;}"}
       .l-f-4{"{fill:#D81159;}"}
       .l-f-5{"{fill:#8F2D56;}"}
-      .buttonKey{"{fill:lightgreen;}"}
-      .buttonKeyText{"{fill:white;}"}
-      .highlight{"{fill:green;}"}
+      .buttonKey{"{opacity: 1; transition: 0.5s opacity ease-out;}"}
+      .buttonKeyText{"{fill:white;font-size: 1.4em;}"}
+      .highlight{"{fill:#FE4365;}"}
+      .fadeKey{"{opacity: 0.2;}"}
       .shadow
-      {
-        "{box-shadow:rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;}"
-      }
+      {"{filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));}"}
     </style>
   );
 };

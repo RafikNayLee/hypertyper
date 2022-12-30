@@ -2,13 +2,16 @@ import React, { useState, useContext } from "react";
 import TextField from "../components/form/TextField";
 import { useRegisterHttp } from "../hooks";
 import { AuthContext } from "../context/auth";
-import { Navigate } from "react-router-dom";
-
+import { Navigate, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Spinner from "react-bootstrap/Spinner";
+import { AvatarCard } from "../components/common";
+import { Col, Row } from "react-bootstrap";
 
 const R = require("ramda");
 
 const Register = () => {
+  const { t } = useTranslation();
   const { login, isAuthenticated } = useContext(AuthContext);
   const [values, setValues] = useState({
     username: "",
@@ -46,53 +49,78 @@ const Register = () => {
   }
 
   return (
-    <div>
-      <h3>Register</h3>
-      <div className="card mt-4">
-        <div className="card-text p-2">
-          <form>
-            <TextField
-              type="email"
-              name="email"
-              label="Email"
-              placeholder={"Enter email"}
-              help={"We'll never share your email with anyone else."}
-              onChange={onChange}
-              error={Boolean(R.path(["email"], error))}
-              errorText={R.path(["email"], error)}
-              value={values.email}
-            />
-            <TextField
-              name="username"
-              label="Username"
-              placeholder={"Enter username"}
-              help={"Mandatory field."}
-              onChange={onChange}
-              error={Boolean(R.path(["username", 0], error))}
-              errorText={R.path(["username", 0], error)}
-              value={values.username}
-            />
-            <TextField
-              type={"password"}
-              name="password"
-              label="Password"
-              placeholder={"Enter password"}
-              help={"Mandatory field."}
-              onChange={onChange}
-              error={Boolean(R.path(["password", 0], error))}
-              errorText={R.path(["password", 0], error)}
-              value={values.password}
-            />
-            <TextField
-              type={"password"}
-              name="confirmPassword"
-              label="Confirm Password"
-              placeholder={"Confirm password"}
-              help={"Mandatory field."}
-              onChange={onChange}
-              value={values.confirmPassword}
-            />
+    <div
+      style={{
+        position: "relative",
+        paddingTop: 80,
+      }}
+    >
+      <AvatarCard>
+        <form>
+          <Row>
+            <Col sm="4">
+              <TextField
+                name="username"
+                label={t("register.username.label")}
+                placeholder={t("register.username.placeholder")}
+                help={t("register.username.help")}
+                onChange={onChange}
+                error={Boolean(R.path(["username", 0], error))}
+                errorText={R.path(["username", 0], error)}
+                value={values.username}
+              />
+            </Col>
+            <Col sm="8">
+              <TextField
+                type="email"
+                name="email"
+                label={t("register.email.label")}
+                placeholder={t("register.email.placeholder")}
+                help={t("register.email.help")}
+                onChange={onChange}
+                error={Boolean(R.path(["email", 0], error))}
+                errorText={R.path(["email", 0], error)}
+                value={values.email}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm="6">
+              <TextField
+                type={"password"}
+                name="password"
+                label={t("register.password.label")}
+                placeholder={t("register.password.placeholder")}
+                help={t("register.password.help")}
+                onChange={onChange}
+                error={Boolean(R.path(["password", 0], error))}
+                errorText={R.path(["password", 0], error)}
+                value={values.password}
+              />
+            </Col>
 
+            <Col sm="6">
+              <TextField
+                type={"password"}
+                name="confirmPassword"
+                label={t("register.confirmPassword.label")}
+                placeholder={t("register.confirmPassword.placeholder")}
+                help={t("register.confirmPassword.help")}
+                onChange={onChange}
+                error={Boolean(R.path(["confirmPassword", 0], error))}
+                errorText={R.path(["confirmPassword", 0], error)}
+                value={values.confirmPassword}
+              />
+            </Col>
+          </Row>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Link to="/login">{t("register.already_have_account")}</Link>
             <button
               type="submit"
               className="btn btn-primary"
@@ -101,12 +129,13 @@ const Register = () => {
               {loading && (
                 <Spinner animation="border" role="status" size="sm" />
               )}
-              Register
+              {t("register.title")}
             </button>
-            {non_field_errors && <ErrorAlert errorText={non_field_errors} />}
-          </form>
-        </div>
-      </div>
+          </div>
+
+          {non_field_errors && <ErrorAlert errorText={non_field_errors} />}
+        </form>
+      </AvatarCard>
     </div>
   );
 };

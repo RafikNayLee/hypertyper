@@ -7,4 +7,5 @@ urlpatterns = [
     path("app/", include("frontend.urls")),
     path("api/", include("typer.urls")),
     path("stats/", include("stats.urls")),
+    path("", include("landingpage.urls")),
 ]

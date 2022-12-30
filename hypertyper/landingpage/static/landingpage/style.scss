@@ -1,0 +1,207 @@
+$primary-light: #bbddf9;
+$primary-main: #3084b1;
+$primary-dark: #214094;
+$secondary-main: #e75b52;
+$border-dark: rgba($primary-dark, 0.88);
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  overflow: hidden;
+  height: auto;
+
+  z-index: -1;
+}
+
+.background-form-1 {
+  fill: $primary-dark;
+}
+
+.background-form-2 {
+  fill: $primary-light;
+}
+
+// navigation
+
+.navigation {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.brand {
+  margin: 20px 20px;
+  font-size: 1.6rem;
+}
+
+.brand-1 {
+  color: $secondary-main;
+  font-weight: bold;
+}
+
+.brand-2 {
+  color: $primary-dark;
+}
+
+.main {
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  orientation: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left {
+  position: relative;
+  max-width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.desk-img {
+  max-width: 600px;
+  margin: auto;
+  z-index: -2;
+  img {
+    width: 100%;
+  }
+}
+
+.slogan {
+  color: black;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  .title {
+    font-size: 2.4rem;
+    font-family: "Andika", sans-serif;
+  }
+  .title-line {
+    stroke: $primary-main;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+    width: 50px;
+  }
+}
+
+.cta-container {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cta {
+  width: 200px;
+  height: 50px;
+  display: inline-block;
+  font-size: 2rem;
+  background: white;
+  text-align: center;
+  color: $primary-dark;
+  border-top: 2px solid $border-dark;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: all 0.5s ease-out;
+}
+
+#cta:hover {
+  background-color: $primary-dark;
+  color: white;
+  border-top: 2px solid $border-dark;
+  transform: skew();
+}
+
+///// RIGHT SIDE only shows for screens > 600px
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+      to right bottom,
+      rgba($primary-light, 0.8),
+      rgba($primary-main, 0.8)
+    ),
+    url(keyboard2-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 60%;
+  height: 100vh;
+  z-index: -1;
+  transform: skew(-25deg);
+  & > * {
+    transform: skew(25deg);
+  }
+}
+
+.svg-app-screenshot-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 80%;
+  height: 70%;
+  margin: auto;
+}
+.svg-app-screenshot {
+  max-width: 600px;
+  width: 80%;
+  // transform: rotate(10deg);
+  z-index: 2;
+}
+
+.svg-app-screenshot-mobile {
+  transform: rotate(-15deg);
+  max-width: 150px;
+  width: 20%;
+  z-index: 3;
+  // align-self: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .left {
+    width: 100%;
+    max-width: 100%;
+  }
+  .right {
+    display: none;
+  }
+  .desk-img {
+    max-width: 200px;
+  }
+  .slogan {
+    .title {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+    }
+  }
+  .svg-app-screenshot-container {
+    max-width: 300px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .svg-app-screenshot-container {
+    display: none;
+  }
+}

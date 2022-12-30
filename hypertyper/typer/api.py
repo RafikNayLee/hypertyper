@@ -12,8 +12,11 @@ class ExerciceViewSet(viewsets.ModelViewSet):
     filterset_fields = ['id', 'lesson']
     def get_queryset(self):
         queryset = self.request.user.exercices.order_by("-pub_date")
-
+        
         return queryset
+     
+
+        
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -42,6 +45,7 @@ class SectionViewSet(viewsets.ModelViewSet):
 #Course ViewSet
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
+    filterset_fields = ['locale']
     permission_classes = [
         permissions.AllowAny
     ]

@@ -4,13 +4,14 @@ import SectionDisplay from "../components/section/SectionDisplay";
 import BreadCrumbs from "../components/layout/BreadCrumbs";
 import { useGetSection } from "../hooks";
 import Loading from "../components/common/Loading";
+import ErrorAlert from "../components/common/ErrorAlert";
 
 const Section = () => {
   const { sectionId } = useParams();
   const { data, loading, error } = useGetSection(sectionId);
-  const loadingMarkup = <Loading text="Loading Section ..." />;
+  const loadingMarkup = <Loading />;
   if (loading) return loadingMarkup;
-  if (error) return <h3>Error ...</h3>;
+  if (error) return <ErrorAlert />;
   if (data)
     return (
       <div>

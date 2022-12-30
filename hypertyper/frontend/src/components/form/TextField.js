@@ -21,7 +21,13 @@ const TextField = ({
         name={name}
         value={value}
       />
-      <small id={`area-label-${name}`} className="form-text text-error">
+      <small
+        id={`area-label-${name}`}
+        className="form-text"
+        style={{
+          color: errorText ? "red" : "black",
+        }}
+      >
         {errorText || help}
       </small>
     </Form.Group>

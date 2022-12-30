@@ -1,14 +1,22 @@
 import { useState } from "react";
 import axios from "axios";
+const controller = new AbortController();
 
 const useHttp = (method) => (api_url) => () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const mutate = ({ options, success_callback, config }) => {
+  const mutate = ({ options = {}, success_callback, config }) => {
     setLoading(true);
-    axios[method](api_url, options, config)
+    axios[method](
+      api_url,
+      {
+        signal: controller.signal,
+        ...options,
+      },
+      config
+    )
       .then((response) => {
         setError(null);
         setLoading(false);
@@ -26,6 +34,7 @@ const useHttp = (method) => (api_url) => () => {
     data,
     loading,
     error,
+    cancel: () => controller.abort(),
   };
 };
 

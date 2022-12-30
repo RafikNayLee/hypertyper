@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import useGetHttp from "./useGetHttp";
+import { AuthContext } from "../context/auth";
 
-const useGetLesson = (id) => {
+const useGetLesson = (id, lastUpdate = 0) => {
+  const { getTokenOptions } = useContext(AuthContext);
   const { mutate, data, loading, error } = useGetHttp(`/api/lessons/${id}/`)();
   useEffect(() => {
     mutate({
-      options: {},
+      options: getTokenOptions(),
     });
-  }, [id]);
+  }, [lastUpdate]);
 
   return { data, loading, error };
 };

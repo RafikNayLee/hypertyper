@@ -31,6 +31,8 @@ const useNextKey = (nextChar) => {
             : t(`buttons.${key.id}.lower`) === nextChar
         )
       );
+    } else {
+      setNextKey(null);
     }
   }, [nextChar]);
 

@@ -1,5 +1,4 @@
 from django.test import TestCase, Client
-from .utils import getJSONObject
 from .models import Section, Course, Lesson, Exercice, User
 import json
 
@@ -52,9 +51,10 @@ class TyperTestCase(TestCase):
 
     def test_get_lesson_succeeds(self):
         c = Client()
-        forceLogin(c)
         
-        response = c.get(f"/api/lessons/{lesson_id}/", follow=True)
+        loginData = forceLogin(c)
+        
+        response = c.get(f"/api/lessons/{lesson_id}/", **{'HTTP_AUTHORIZATION': f'Token {loginData["token"]}'}, follow=True)
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.content)
         lesson = Lesson.objects.get(id=lesson_id)
@@ -71,8 +71,9 @@ class TyperTestCase(TestCase):
 
     def test_get_courses_succeeds(self):
         c = Client()
-        forceLogin(c)
-        response = c.get("/api/courses/", follow=True)
+        loginData = forceLogin(c)
+        
+        response = c.get("/api/courses/", **{'HTTP_AUTHORIZATION': f'Token {loginData["token"]}'}, follow=True)
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.content)
         courses = Course.objects.all()

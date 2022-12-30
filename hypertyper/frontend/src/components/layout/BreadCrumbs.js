@@ -1,6 +1,8 @@
 import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import { useTranslation } from "react-i18next";
+import StylingSeparator from "../common/StylingSeparator";
 
 const BreadCrumbs = ({
   courseId,
@@ -11,9 +13,10 @@ const BreadCrumbs = ({
   lessonName,
   lessonBadge,
 }) => {
+  const { t } = useTranslation();
   const crumbs = [
     {
-      title: "Home",
+      title: t("home.title"),
       to: "/",
       active: false,
     },
@@ -51,7 +54,7 @@ const BreadCrumbs = ({
     >
       <Breadcrumb
         style={{
-          borderBottom: "1px solid gray",
+          margin: 0,
         }}
       >
         {crumbs.map((crumb, index) => {
@@ -72,6 +75,7 @@ const BreadCrumbs = ({
           return item;
         })}
       </Breadcrumb>
+      <StylingSeparator height="3px" />
     </div>
   );
 };
